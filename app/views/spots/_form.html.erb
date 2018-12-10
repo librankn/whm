@@ -1,0 +1,23 @@
+<%= form_with(model: @spot,local:true,url: choose_new_or_edit) do |form| %>
+  <% if @spot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @spot.errors.count %>件のエラーがあります。</h2>
+      <ul>
+
+      <% @spot.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="spot_title">
+    <%= form.label :title %>
+    <%= form.text_field :spot_name %>
+  </div>
+  <div class="spot_title">
+    <%= form.label :content %>
+    <%= form.text_field :spot_location %>
+  </div>
+  <%= form.submit %>
+<% end %>

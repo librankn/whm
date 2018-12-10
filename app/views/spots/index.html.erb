@@ -1,0 +1,22 @@
+<h1>ブログ一覧</h1>
+
+<p><%= notice %></p>
+
+<table>
+  <tr>
+    <th>タイトル</th>
+    <th>内容</th>
+  </tr>
+
+<% @spots.each do |spot| %>
+  <tr>
+    <td><%= spot.spot_name %></td>
+    <td><%= spot.spot_location %></td>
+    <td><%= link_to '詳細を確認する', spot_path(spot.id) %></td>
+    <td><%= link_to "ブログを編集する", edit_spot_path(spot.id) %></td>
+    <td><%= link_to 'ブログを削除する', spot_path(spot.id), method: :delete,data: { confirm: '本当に削除していいですか？' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to '新しくブログを投稿する', new_spot_path %>
