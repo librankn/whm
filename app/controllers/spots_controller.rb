@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class SpotsController < ApplicationController
-  before_action :set_spot, only: [:show, :edit, :update]
+  before_action :set_spot, only: [:show, :edit, :update, :destroy]
   def index
     @spots = Spot.all
   end
@@ -9,7 +9,7 @@ class SpotsController < ApplicationController
   def create
     @spot = Spot.new(spot_params)
     if @spot.save
-      redirect_to spot_path,notice:"部録を作成しました"
+      redirect_to spots_path,notice:"ブログを作成しました"
     else
       render 'new'
     end

@@ -1,0 +1,16 @@
+<h3>以下の内容で、送信する。</h3>
+
+<%= form_with(model: @spot, url: url, local: true) do |form| %>
+  <%= form.hidden_field :spot_name %>
+  <%= form.hidden_field :spot_location %>
+
+  <p>タイトル:<%= @spot.spot_name %></p>
+  <p>本文:<%= @spot.spot_location %></p>
+  <%= form.submit  "登録する" %>
+<% end %>
+
+<%= form_with(model: @spot, url: new_spot_path, local: true, method: 'get') do |form| %>
+  <%= form.hidden_field :spot_name %>
+  <%= form.hidden_field :spot_location %>
+  <%= form.submit "もどる", name: 'back' %>
+<% end %>

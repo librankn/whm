@@ -5,7 +5,8 @@ module SpotsHelper
     if action_name == 'new' || action_name == 'confirm'
       confirm_spots_path
     elsif action_name == 'edit'
-      edit_confirm_spots_path
+      edit_confirm_spots_path(@spot.id)
+      # spot_path
     end
   end
 end

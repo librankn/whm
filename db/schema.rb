@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_10_195931) do
+ActiveRecord::Schema.define(version: 2018_12_12_210752) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "sopts", force: :cascade do |t|
+  create_table "spots", force: :cascade do |t|
     t.text "spot_name"
     t.text "loan_location"
     t.text "loan_number"
@@ -25,11 +25,6 @@ ActiveRecord::Schema.define(version: 2018_12_10_195931) do
     t.date "last_update_day"
     t.text "contributor_comment"
     t.text "spot_location"
-  end
-
-  create_table "spots", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
