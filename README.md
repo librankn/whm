@@ -56,5 +56,7 @@ https://docs.google.com/spreadsheets/d/1r4vHDZLniqEuJ4HuDjMHsAfIf25yvxtuah0zhbCx
 - kaminari
 - CarrierWave
 - ImageMagick
+- mini_magick
 - bcrypt
-- jquery-rails
+- bootstrap-sass
+- simple_form
