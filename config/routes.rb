@@ -2,8 +2,8 @@
 
 Rails.application.routes.draw do
 
-  devise_for :users
-  root 'spots#index'
+  root :to => 'tops#index'
+
 
   resources :spots do
     collection do
@@ -11,6 +11,11 @@ Rails.application.routes.draw do
       post :edit_confirm
     end
   end
+
+  devise_for :users, controllers: {
+    registrations: "users/registrations",
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
